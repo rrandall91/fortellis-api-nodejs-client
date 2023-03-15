@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Fortellis APIs Client Library for Node.js",
   "main": "./build/src/index.js",
+  "files": ["./build/**/*"],
   "scripts": {
     "build": "tsc -p .",
     "lint": "eslint . --fix",
@@ -15,9 +16,10 @@
   },
   "keywords": [
     "fortellis",
-    "api"
+    "api",
+    "elead"
   ],
-  "author": "Rashaad R. Randall",
+  "author": "Rashaad R. Randall <hello@rashaadrandall.com>",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/rrandall91/fortellis-api-nodejs-client/issues"
