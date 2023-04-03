@@ -78,8 +78,13 @@ export function createAPIRequest<T>(options: APIRequestParameters): Promise<T> {
         Authorization: `Bearer ${accessToken}`,
         "Subscription-Id": subscriptionId,
       },
+    }).then((res) => {
+      if (environment === "test") {
+        console.info(`[DEBUG] Request: ${res.request?.res?.responseUrl}`);
+        console.info(`[DEBUG] Response: Status Code ${res.status}; ${JSON.stringify(res.data)}`);
+      }
+      resolve(res.data as T);
     })
-      .then((res) => resolve(res.data as T))
       .catch((error) => {
         reject(new Error(`Request failed with status code ${error.response.status}: ${error.response.data.message}`));
       });
