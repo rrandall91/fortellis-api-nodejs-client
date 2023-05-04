@@ -29,5 +29,5 @@ export class FortellisApis {
         this[file] = (apis as any)[file].bind(this);
       }
     }
-  }   
+  }
 }

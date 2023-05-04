@@ -5,7 +5,7 @@ const FORTELLIS_AUTH_URL = "https://identity.fortellis.io/oauth2/aus1p1ixy7YL8cM
 export interface Options {
   apiKey: string;
   apiSecret: string;
-  subscriptionId: string;
+  subscriptionId?: string;
 }
 
 export interface JWT {
@@ -17,7 +17,7 @@ export interface JWT {
 
 export interface AuthResponse {
   accessToken: string;
-  subscriptionId: string;
+  subscriptionId: string | null;
 }
 
 export class Auth {
@@ -41,7 +41,9 @@ export class Auth {
         reject(new Error("Credentials not provided"));
       }
 
-      this.subscriptionId = credentials.subscriptionId;
+      if (credentials.subscriptionId) {
+        this.subscriptionId = credentials.subscriptionId;
+      }
 
       axios({
         method: "post",
@@ -66,7 +68,7 @@ export class Auth {
         .then(() => {
           const { subscriptionId, accessToken } = this;
 
-          if (subscriptionId && accessToken) {
+          if (accessToken) {
             resolve({ subscriptionId, accessToken });
           }
 
@@ -76,6 +78,10 @@ export class Auth {
           reject(error.message);
         });
     });
+  }
+
+  public setSubscriptionId(value: string): void {
+    this.subscriptionId = value;
   }
 
   // eslint-disable-next-line class-methods-use-this

@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig, Method } from "axios";
 import { EnvironmentOptions } from "../fortellisapis";
 import { AuthResponse } from "../auth";
+import { subscriptions } from "./subscriptions";
 import { eleadproductreferencedata } from "./eleadproductreferencedata";
 import { eleadsalesactivities } from "./eleadsalesactivities";
 import { eleadsalesopportunities } from "./eleadsalesopportunities";
@@ -86,12 +87,18 @@ export function createAPIRequest<T>(options: APIRequestParameters): Promise<T> {
       resolve(res.data as T);
     })
       .catch((error) => {
+        if (environment === "test") {
+          console.info(`[DEBUG] Request: ${error.request.res.responseUrl}`);
+        }
+        
         reject(new Error(`Request failed with status code ${error.response.status}: ${error.response.data.message}`));
       });
   });
 }
 
 export class APIS {
+  public subscriptions = subscriptions;
+
   public eleadproductreferencedata = eleadproductreferencedata;
 
   public eleadsalesactivities = eleadsalesactivities;
@@ -99,5 +106,4 @@ export class APIS {
   public eleadsalescustomers = eleadsalescustomers;
 
   public eleadsalesopportunities = eleadsalesopportunities;
-
 }
