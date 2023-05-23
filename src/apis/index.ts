@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig, Method } from "axios";
+import { v4 as uuidv4 } from "uuid";
 import { EnvironmentOptions } from "../fortellisapis";
 import { AuthResponse } from "../auth";
 import { subscriptions } from "./subscriptions";
@@ -6,6 +7,9 @@ import { eleadproductreferencedata } from "./eleadproductreferencedata";
 import { eleadsalesactivities } from "./eleadsalesactivities";
 import { eleadsalesopportunities } from "./eleadsalesopportunities";
 import { eleadsalescustomers } from "./eleadsalescustomers";
+import { cdkdrivegetcustomer } from "./cdkdrivegetcustomer";
+import { cdkdrivegetserviceappointment } from "./cdkdrivegetserviceappointment";
+import { cdkdrivegetrepairorder } from "./cdkdrivegetrepairorder";
 
 export interface GlobalOptions {
   auth?: AuthResponse;
@@ -76,7 +80,9 @@ export function createAPIRequest<T>(options: APIRequestParameters): Promise<T> {
       baseURL: baseUrls[environment],
       headers: {
         ...config.headers,
+        Accept: "application/json",
         Authorization: `Bearer ${accessToken}`,
+        "Request-Id": uuidv4(),
         "Subscription-Id": subscriptionId,
       },
     }).then((res) => {
@@ -106,4 +112,10 @@ export class APIS {
   public eleadsalescustomers = eleadsalescustomers;
 
   public eleadsalesopportunities = eleadsalesopportunities;
+
+  public cdkdrivegetcustomer = cdkdrivegetcustomer;
+
+  public cdkdrivegetserviceappointment = cdkdrivegetserviceappointment;
+
+  public cdkdrivegetrepairorder = cdkdrivegetrepairorder;
 }

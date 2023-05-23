@@ -1,15 +1,16 @@
 # Node.js API Client for Fortellis
 
-This is an unofficial Node.js client for the Fortellis API.
+This is an unofficial Node.js client for the Fortellis API libraries.
 
-## Roadmap
+## Integrations
 
-Currently, the roadmap consists of building a client for the following Elead APIs:
-
-- [x] Elead Product Reference Data API
-- [x] Elead Sales Activities API
-- [x] Elead Sales Customers API
-- [x] Elead Sales Opportunities API
+- [Elead Product Reference Data](https://apidocs.fortellis.io/apis/9a205e0b-dc96-4cf7-91eb-c0ade5180901)
+- [Elead Sales Activities](https://apidocs.fortellis.io/apis/d7440b3e-89ce-4e93-a6ad-56f2c061a77d)
+- [Elead Sales Customers](https://apidocs.fortellis.io/apis/29745963-52a6-4068-b9e4-4e0fd0438ac4)
+- [Elead Sales Opportunities](https://apidocs.fortellis.io/apis/0f47e065-c996-4a09-bcfa-c89d79102f38)
+- [CDK Drive Get Customer](https://apidocs.fortellis.io/apis/f83a79c6-8cf9-4c1a-b45e-b266634eaf90)
+- [CDK Drive Get Service Appointment](https://apidocs.fortellis.io/apis/11a8fd45-da51-4747-9e6f-a842828cc1b6)
+- [CDK Drive Get Repair Order](https://apidocs.fortellis.io/apis/cf3e1079-e617-4e4d-acd0-21e991f60408)
 
 Following sufficient adoption, additional APIs may be added.
 
