@@ -1,6 +1,6 @@
 {
   "name": "fortellis",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Fortellis APIs Client Library for Node.js",
   "main": "./build/src/index.js",
   "files": [
@@ -11,7 +11,7 @@
     "lint": "eslint . --fix",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "publish": "npm run build && npm publish"
+    "publish": "tsc -p . && npm publish"
   },
   "repository": {
     "type": "git",

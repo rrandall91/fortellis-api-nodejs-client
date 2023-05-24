@@ -10,6 +10,7 @@ import { eleadsalescustomers } from "./eleadsalescustomers";
 import { cdkdrivegetcustomer } from "./cdkdrivegetcustomer";
 import { cdkdrivegetserviceappointment } from "./cdkdrivegetserviceappointment";
 import { cdkdrivegetrepairorder } from "./cdkdrivegetrepairorder";
+import { cdkdrivegetfisales } from "./cdkdrivegetfisales";
 
 export interface GlobalOptions {
   auth?: AuthResponse;
@@ -118,4 +119,6 @@ export class APIS {
   public cdkdrivegetserviceappointment = cdkdrivegetserviceappointment;
 
   public cdkdrivegetrepairorder = cdkdrivegetrepairorder;
+
+  public cdkdrivegetfisales = cdkdrivegetfisales;
 }

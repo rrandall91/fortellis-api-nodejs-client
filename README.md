@@ -11,6 +11,7 @@ This is an unofficial Node.js client for the Fortellis API libraries.
 - [CDK Drive Get Customer](https://apidocs.fortellis.io/apis/f83a79c6-8cf9-4c1a-b45e-b266634eaf90)
 - [CDK Drive Get Service Appointment](https://apidocs.fortellis.io/apis/11a8fd45-da51-4747-9e6f-a842828cc1b6)
 - [CDK Drive Get Repair Order](https://apidocs.fortellis.io/apis/cf3e1079-e617-4e4d-acd0-21e991f60408)
+- [CDK Drive Get FI Sales](https://apidocs.fortellis.io/apis/b54ba111-7874-4c25-b8d9-ba3b3eb722ef)
 
 Following sufficient adoption, additional APIs may be added.
 
