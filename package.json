@@ -1,6 +1,6 @@
 {
   "name": "fortellis",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Fortellis APIs Client Library for Node.js",
   "main": "./build/src/index.js",
   "files": [

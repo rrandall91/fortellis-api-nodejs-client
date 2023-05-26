@@ -653,7 +653,7 @@ export namespace cdkdrivegetfisalesV1 {
       return this.options.auth;
     }
 
-    public getFISalesBulk(): Promise<ResponseBody> {
+    public getFISalesBulk(startDate: string, endDate?: string): Promise<ResponseBody> {
       if (!this.auth) {
         throw new Error("Not authenticated");
       }
@@ -664,13 +664,17 @@ export namespace cdkdrivegetfisalesV1 {
         config: {
           method: "GET",
           url: `${this.baseUrl}/bulk`,
+          params: {
+            startDate,
+            endDate,
+          },
         },
       };
 
       return createAPIRequest<ResponseBody>(params);
     }
 
-    public getFISalesOpenBulk(): Promise<ResponseBody> {
+    public getFISalesOpenBulk(startDate: string, endDate?: string): Promise<ResponseBody> {
       if (!this.auth) {
         throw new Error("Not authenticated");
       }
@@ -681,6 +685,10 @@ export namespace cdkdrivegetfisalesV1 {
         config: {
           method: "GET",
           url: `${this.baseUrl}/open`,
+          params: {
+            startDate,
+            endDate,
+          },
         },
       };
 
@@ -711,7 +719,7 @@ export namespace cdkdrivegetfisalesV1 {
       return createAPIRequest<ResponseBody>(params);
     }
 
-    public getFISalesClosedBulk(): Promise<ResponseBody> {
+    public getFISalesClosedBulk(startDate: string, endDate?: string): Promise<ResponseBody> {
       if (!this.auth) {
         throw new Error("Not authenticated");
       }
@@ -722,6 +730,10 @@ export namespace cdkdrivegetfisalesV1 {
         config: {
           method: "GET",
           url: `${this.baseUrl}/closed`,
+          params: {
+            startDate,
+            endDate,
+          },
         },
       };
 
