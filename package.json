@@ -11,7 +11,7 @@
     "lint": "eslint . --fix",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "publish": "tsc -p . && npm publish"
+    "prepublishOnly": "tsc -p ."
   },
   "repository": {
     "type": "git",

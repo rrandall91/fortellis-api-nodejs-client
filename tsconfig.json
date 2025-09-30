@@ -7,8 +7,9 @@
       "esModuleInterop": true,
       "strict": true,
       "declaration": true,
-      "lib": [],
-      "types": ["node", "jest"]
+      "lib": ["ES2015"],
+      "types": ["node", "jest"],
+      "skipLibCheck": true
   },
   "include": [
       "./src/**/*.ts",
