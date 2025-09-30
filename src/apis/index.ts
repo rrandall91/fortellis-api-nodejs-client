@@ -98,7 +98,7 @@ export function createAPIRequest<T>(options: APIRequestParameters): Promise<T> {
           console.info(`[DEBUG] Request: ${error.request.res.responseUrl}`);
         }
         
-        reject(new Error(`Request failed with status code ${error.response.status}: ${error.response.data.message}`));
+        reject(new Error(`Request failed with status code ${error.response?.status}: ${error.response?.data?.message}`));
       });
   });
 }
